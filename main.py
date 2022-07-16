@@ -13,6 +13,10 @@ def csv_to_dict(file_name):
       arr.append(data.dict_gen(header,line))
     return arr
 
+@bottle.route('/static/<filepath:path>')
+def server_static():
+    return bottle.static_file("style.css", root='/static')
+
 # A route annotation for "/" must serve up the HTML file as a static file.
 @bottle.route('/')
 def index():
