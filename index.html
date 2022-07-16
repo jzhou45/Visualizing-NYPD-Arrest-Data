@@ -7,10 +7,10 @@
     <script src =  "https://cdn.plot.ly/plotly-latest.min.js"> </script>
     <script src = "ajax.js"> </script>
     <script src = "script.js"> </script>
+    <link rel="stylesheet" href="style.css">
   </head>
   <body onload = "getData();">
     <h1> Visualizing NYPD Arrest Data </h1>
-    <h2> pwease be paitent, my code is slow &#128073 &#128072 &#128524 uwu</h2>
     <p> Enter borough to generate bar graph of arrest data by age group for that borough:</p>
     <label for = "boroText"> Borough: </label>
     <input type="text" id="boroText"></input>
@@ -18,8 +18,8 @@
     <div id = 'boroInner'> </div>
     <p> (Enter B for Bronx, K for Brooklyn, M for Manhattan, Q for Queens, and S for Staten Island) </p>
 <!-- This should call a function in your JavaScript code which gets the value of the textbox and sends that to the server using a POST request. When the server responds to this request, you will need code that creates the graph using that data. -->
+  <div id = "barGraph"> </div>
     <div id = "lineGraph"> </div>
     <div id = "pieGraph"> </div>
-    <div id = "barGraph"> </div>
   </body>
 </html>

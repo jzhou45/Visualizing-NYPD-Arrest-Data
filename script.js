@@ -62,24 +62,23 @@ function plotBarGraph(jsonString){
   var data = [];
   data.push(data2);
   var ele = document.getElementById("boroInner");
-  var ele2 = ele['innerHTML'];
-  var boro = '';
-  if (ele2 == 'Q'){
-    boro += "Queens";
-  }
-  else if (ele2 == 'B'){
+  const ele2 = ele['innerHTML'];
+  const str = ele2[ele2.length - 2];
+  let boro = "";
+  if (str === "Q"){
+    boro += 'Queens';
+  } else if (str === "M"){
+    boro += 'Manhattan';
+  } else if (str === "B"){
     boro += 'Bronx';
-  }
-  else if (ele2 == 'K'){
-    boro += 'Brooklyn'
-  }
-  else if (ele2 == 'M'){
-    boro += 'Manhattan'
-  }
-  else if (ele2 == 'S'){
-    boro += 'Staten Island'
-  }
-  var titl = 'Age of People Arrested in ' + boro;
+  } else if (str === 'K'){
+    boro += 'Brooklyn';
+  } else if (str === 'S'){
+    boro += 'Staten Island';
+  };
+
+  let titl = `Age of People Arrested in ${boro}`;
+
   layout = {title: titl, xaxis: {title: 'Age Range'}, yaxis: {title: '# of Arrests'}};
   Plotly.newPlot('barGraph', data, layout);
 }
